@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
     try {
-        // Connect the client to the server	(optional starting in v4.7)
+        // Connect the client to the server	
         await client.connect();
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
@@ -77,7 +77,7 @@ async function run() {
         })
 
 
-        // Users related apis
+        // Users related api
         app.get('/users', async (req, res) => {
             const cursor = userCollection.find();
             const result = await cursor.toArray();
@@ -120,7 +120,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-    res.send('HOT HOT HOT COFFEEEEEEE')
+    res.send('coffee')
 })
 
 app.listen(port, () => {
